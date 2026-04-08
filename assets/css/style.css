@@ -95,6 +95,25 @@ a:hover { color: var(--color-teal-dark); text-decoration: underline; }
   height: 4px;
   background: var(--color-gold);
 }
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.hero-logo {
+  flex: 0 0 auto;
+  max-width: 240px;
+}
+.hero-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hero-copy {
+  flex: 1 1 360px;
+  min-width: 0;
+}
 .hero h1 {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 4vw, 3.25rem);
@@ -252,6 +271,14 @@ section .section-lede {
   font-family: var(--font-serif);
   margin-top: 2rem;
   color: var(--color-navy);
+}
+
+@media (max-width: 720px) {
+  .hero-inner { gap: 2rem; }
+  .hero-logo { max-width: 160px; margin: 0 auto; }
+  .hero-copy { text-align: center; }
+  .hero h1 { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
 }
 
 @media (max-width: 600px) {
