@@ -102,13 +102,13 @@ a:hover { color: var(--color-teal-dark); text-decoration: underline; }
   flex-wrap: wrap;
 }
 .hero-logo {
-  flex: 0 0 220px;
-  max-width: 220px;
+  flex: 0 0 320px;
+  max-width: 320px;
 }
 .hero-logo img {
   display: block;
   width: 100%;
-  max-width: 220px;
+  max-width: 320px;
   height: auto;
 }
 .hero-copy {
