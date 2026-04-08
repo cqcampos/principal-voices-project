@@ -1,0 +1,118 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero">
+  <div class="container">
+    <h1>Listening to the leaders shaping American schools.</h1>
+    <p class="lede">
+      The Principal Voices Project keeps a steady pulse on K–12 leadership by
+      surveying school principals nationwide on the issues defining today's
+      classrooms — from generative AI to accountability and beyond.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="#participate">Participate in a survey</a>
+      <a class="btn btn-ghost" href="#reports">Read our reports</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <h2>About the project</h2>
+    <p class="section-lede">
+      Principals sit at the center of every major decision in American
+      education, yet their perspectives rarely reach policymakers in real time.
+      The Principal Voices Project closes that gap with short, recurring
+      surveys designed to surface what school leaders are actually seeing,
+      thinking, and doing.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Short by design</h3>
+        <p>Each survey takes under ten minutes so busy school leaders can participate without disrupting their day.</p>
+      </div>
+      <div class="card">
+        <h3>Built for principals</h3>
+        <p>Participants receive early access to research reports, policy briefs, and aggregated insights from peers nationwide.</p>
+      </div>
+      <div class="card">
+        <h3>Independent research</h3>
+        <p>Run by university researchers, with findings shared publicly to inform educators, policymakers, and the public.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="topics" class="section">
+  <div class="container">
+    <h2>Current topics</h2>
+    <p class="section-lede">Recent and upcoming surveys focus on the most pressing questions facing school leaders today.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Generative AI in K–12</h3>
+        <p>How principals are navigating policies, classroom use, and professional learning as generative AI tools spread through schools.</p>
+      </div>
+      <div class="card">
+        <h3>Accountability in 2026</h3>
+        <p>How school leaders view shifting state and federal accountability frameworks, and what they expect ahead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reports" class="section">
+  <div class="container">
+    <h2>Reports</h2>
+    <p class="section-lede">Findings from our surveys, published as we collect and analyze new waves.</p>
+
+    {% if site.reports.size > 0 %}
+      <ul class="reports-list">
+        {% assign sorted_reports = site.reports | sort: 'date' | reverse %}
+        {% for report in sorted_reports %}
+          <li>
+            <h3><a href="{{ report.url | relative_url }}">{{ report.title }}</a></h3>
+            <p class="meta">{{ report.date | date: "%B %Y" }}{% if report.authors %} · {{ report.authors | join: ", " }}{% endif %}</p>
+            {% if report.summary %}<p>{{ report.summary }}</p>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <div class="empty-note">
+        Our first report is on the way. Check back soon — or
+        <a href="#participate">sign up to participate</a> and we'll send it to you directly.
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<section id="team" class="section">
+  <div class="container">
+    <h2>Principal investigators</h2>
+    <p class="section-lede">The project is led by university-based researchers studying K–12 education.</p>
+    <div class="people">
+      {% for person in site.investigators %}
+        <div class="person">
+          <h3><a href="{{ person.url }}">{{ person.name }}</a></h3>
+          <p>{{ person.affiliation }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="participate" class="section">
+  <div class="container">
+    <h2>Participate</h2>
+    <p class="section-lede">
+      Are you a current K–12 school principal? Join our nationwide panel.
+      Surveys are short, your responses are confidential, and participants are
+      entered into gift-card raffles and receive early access to findings.
+    </p>
+    <p>
+      <a class="btn" href="mailto:info@principal-voices-project.com?subject=Principal%20Voices%20Project%20%E2%80%94%20Sign%20up">Sign up to participate</a>
+    </p>
+  </div>
+</section>

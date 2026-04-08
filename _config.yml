@@ -1,0 +1,42 @@
+title: The Principal Voices Project
+description: >-
+  The Principal Voices Project keeps a steady pulse on K–12 leadership by
+  surveying school principals nationwide on the issues shaping American
+  education.
+url: "https://principal-voices-project.com"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+
+# Collections
+collections:
+  reports:
+    output: true
+    permalink: /reports/:path/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "reports"
+    values:
+      layout: "report"
+
+# People
+investigators:
+  - name: Christopher Campos
+    affiliation: University of Chicago, Booth School of Business
+    url: https://cqcampos.com
+  - name: John Singleton
+    affiliation: University of Rochester
+    url: https://sites.google.com/site/jdsingletonecon/home
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .sass-cache
